@@ -1,0 +1,15 @@
+requisitos
+node versão: 8
+
+ou 
+
+docker versão: 18
+
+comandos:
+
+node: 
+node q1.js
+
+docker:
+docker build --rm -f "agilecontent-q1/Dockerfile" -t agilecontent-q1:latest agilecontent-q1
+docker run -it --rm agilecontent-q1/latest

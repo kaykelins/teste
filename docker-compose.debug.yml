@@ -1,0 +1,7 @@
+version: '2.1'
+
+services:
+  agilecontent:
+    image: agilecontent:q1
+    build: .
+    command: node --inspect q1.js

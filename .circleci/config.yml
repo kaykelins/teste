@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: update yum
-          command: 'yum update'
+          command: 'yum update -y'
       - run:
           name: install docker dependecies
           command: 'yum install -y yum-utils device-mapper-persistent-data lvm2'
@@ -16,7 +16,7 @@ jobs:
           command: 'yum-config-manager --dd-repo https://download.docker.com/linux/centos/docker-ce.repo'
       - run:
           name: update registry
-          command: 'yum update'
+          command: 'yum update -y'
       - run:
           name: install docker-ce
           command: 'yum install -y docker-ce'

@@ -20,4 +20,7 @@ jobs:
       - run:
           name: install docker-ce
           command: 'yum install -y docker-ce'
-          
+      - run:
+          name: docker run hello-world
+          command: 'docker run hello-world'
+

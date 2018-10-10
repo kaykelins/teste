@@ -22,7 +22,7 @@ jobs:
           command: 'yum install -y docker-ce'
       - run:
           name: start docker-daemon
-          commmad: 'systemctl start docker'
+          command: 'systemctl start docker'
       - run:
           name: docker run hello-world
           command: 'docker run hello-world'

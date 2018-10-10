@@ -2,12 +2,22 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: centos:7
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: update yum
+          command: sudo yum update
       - run:
-          name: Print the Current Time
-          command: date
+          name: install docker dependecies
+          command: sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+      - run:
+          name: install docker repository
+          command: sudo yum-config-manager --dd-repo https://download.docker.com/linux/centos/docker-ce.repo
+      - run:
+          name: update registry
+          command: sudo yum update
+      - run:
+          name: install docker-ce
+          command: sudo install -y docker-ce
+          

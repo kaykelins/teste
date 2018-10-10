@@ -2,28 +2,5 @@ version: 2
 jobs:
   build:
     docker:
-      - image: centos/systemd
-    steps:
-      - checkout
-      - run:
-          name: update yum
-          command: 'yum update -y'
-      - run:
-          name: install docker dependecies
-          command: 'yum install -y yum-utils device-mapper-persistent-data lvm2'
-      - run:
-          name: install docker repository
-          command: 'yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo'
-      - run:
-          name: update registry
-          command: 'yum update -y'
-      - run:
-          name: install docker-ce
-          command: 'yum install -y docker-ce'
-      - run:
-          name: start docker-daemon
-          command: 'systemctl start docker'
-      - run:
-          name: docker run hello-world
-          command: 'docker run hello-world'
+      - image: quay.io/johnkazz/teste
 

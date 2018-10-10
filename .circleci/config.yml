@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: centos:7
+      - image: centos/systemd
     steps:
       - checkout
       - run:
@@ -22,7 +22,7 @@ jobs:
           command: 'yum install -y docker-ce'
       - run:
           name: start docker-daemon
-          command: 'sudo systemctl start docker'
+          command: 'systemctl start docker'
       - run:
           name: docker run hello-world
           command: 'docker run hello-world'

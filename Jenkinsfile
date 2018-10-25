@@ -6,9 +6,18 @@ pipeline {
 
   }
   stages {
-    stage('build') {
-      steps {
-        sh 'ls -a'
+    stage('list files') {
+      parallel {
+        stage('list files') {
+          steps {
+            sh 'ls -a'
+          }
+        }
+        stage('npm init') {
+          steps {
+            sh 'npm init'
+          }
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ pipeline {
             sh 'ls -a'
           }
         }
-        stage('npm init') {
+        stage('npm test') {
           steps {
             sh 'npm test'
           }

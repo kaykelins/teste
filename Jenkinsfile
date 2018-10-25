@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      filename './dockerfile'
+    docker {
+      image 'node:8.9-alpine'
     }
 
   }

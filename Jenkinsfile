@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:8.9-alpine'
-    }
-
-  }
+  agent any
   stages {
     stage('list files') {
       parallel {
@@ -20,7 +15,7 @@ pipeline {
         }
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         sh 'docker ps'
       }

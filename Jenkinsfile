@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    node {
-      label 'test'
+    docker {
+      image 'node:8.9-alpine'
     }
 
   }
@@ -18,11 +18,6 @@ pipeline {
             sh 'npm test'
           }
         }
-      }
-    }
-    stage('error') {
-      steps {
-        sh 'docker ps'
       }
     }
   }

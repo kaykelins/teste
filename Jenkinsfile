@@ -7,17 +7,8 @@ pipeline {
   }
   stages {
     stage('list files') {
-      parallel {
-        stage('list files') {
-          steps {
-            sh 'ls -a'
-          }
-        }
-        stage('npm test') {
-          steps {
-            sh 'npm test'
-          }
-        }
+      steps {
+        sh 'ls -a'
       }
     }
   }
